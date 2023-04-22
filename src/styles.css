@@ -1,0 +1,289 @@
+/*styles.css*/
+* {
+  box-sizing: border-box;
+}
+
+.theselect {
+  font-size: 10px;
+}
+
+.pagelink {
+  padding-top: 10px;
+}
+
+.squares-container {
+  display: flex;
+  padding: 5px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+#pagelinksholder {
+  padding-top: 10px;
+}
+
+.boneDemoText {
+  padding-bottom: 10px;
+}
+
+.square {
+  width: 20px;
+  height: 20px;
+  background-color: #fa1010;
+  margin-right: 5px;
+}
+
+fieldset {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  padding-bottom: 5px;
+}
+
+.fieldseta {
+  background-color: rgb(104, 104, 104, 0.7);
+  border: .1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 14px;
+  margin-top: 8px;
+  color: white;
+}
+
+Typography P {
+  line-height: 1;
+}
+
+#bonedecaldiv {
+  margin-top: 10px;
+}
+
+#transformsdiv {
+  margin-top: 10px;
+}
+
+.topicon {
+  height: 100%;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.closeicon {
+  position: absolute;
+  top: 0px;
+  right: -8px;
+  height: 15px;
+  cursor: pointer;
+}
+
+#iconsdiv {
+  margin-top: 10px;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  height: 30px;
+  z-index: 10;
+  background-color: aliceblue;
+  line-height: normal;
+  background-color: rgb(104, 104, 104, 0.7);
+  position: fixed;
+  top: 0px;
+  left: 200px;
+  z-index: 20;
+  border: .2px solid rgb(243, 243, 243);
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  margin-top: 8px;
+}
+
+#logodiv {
+  outline-style: none;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 100px;
+  height: 100px;
+  z-index: 10;
+  color: aliceblue;
+  pointer-events: none;
+}
+
+.logo {
+  max-height: 44px;
+  outline-style: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#canvasholder {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.link {
+  display: block;
+}
+
+#menuoageinner {
+  height: 100%;
+  width: 100%;
+  background-color: #336880;
+  padding: 20px;
+}
+
+#mainpage {
+  /* display: flex;
+  flex-direction: row; */
+  height: 100%;
+  width: 100%;
+  background-color: #00aeff;
+}
+
+.rightpanel {
+  background-color: whitesmoke;
+  width: 25%;
+  position: relative;
+  height: 100%;
+  float: right;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-family: sans-serif;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sliderdiv {
+  background-color: rgb(226, 226, 226);
+  border: .2px solid black;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 14px;
+  margin-top: 8px;
+}
+
+.objectinputdiv {
+  line-height: small;
+  min-width: 250px;
+  min-height: 50px;
+  background-color: rgb(104, 104, 104);
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  z-index: 20;
+  border: .2px solid black;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 14px;
+  margin-top: 8px;
+}
+
+.mylightdiv {
+  line-height: normal;
+  min-width: 150px;
+  background-color: rgb(104, 104, 104);
+  position: fixed;
+  top: 50px;
+  left: 10px;
+  z-index: 20;
+  border: .2px solid black;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 14px;
+  margin-top: 8px;
+}
+
+.mylightinner {
+  min-width: 150px;
+  background-color: rgb(124, 23, 23);
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.checkboxes label {
+  font-size: 10px;
+  display: inline-block;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+.myhead {
+  padding-top: 9px;
+}
+
+.checkboxes input {
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.checkboxes label span {
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.rightpanelouter h2 {
+  font-size: 5px;
+  font-weight: 100;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+body {
+  background: #000000;
+  font-size: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+}
+
+
+
+.product-details:hover {
+  color: #fff;
+  border-color: rgba(0, 174, 255, 0.5);
+  background-color: rgba(0, 174, 255, 0.5);
+}
+
+.product-details:hover.checked {
+  border-color: #00aeff;
+  background-color: #00aeff;
+}
+
+.checked {
+  position: relative;
+  color: #fff;
+  border-color: #00aeff;
+  background-color: #00aeff;
+}
+
+.checked:after {
+  position: absolute;
+  z-index: 2;
+  top: -15px;
+  right: -15px;
+  padding: 5px;
+  font-size: 70%;
+  border-radius: 4px;
+  background-color: tomato;
+  content: "Selected";
+}

@@ -1,0 +1,41 @@
+{
+  "name": "react-three-fiber-starter-kit",
+  "version": "1.0.0",
+  "description": "A template with a pre-set scene ready to start customizing.",
+  "keywords": [
+    "three.js",
+    "react-three-fiber"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.12.1",
+    "@react-spring/three": "^9.7.2",
+    "@react-three/drei": "^9.65.4",
+    "@react-three/fiber": "^8.12.1",
+    "gsap": "^3.11.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.5",
+    "react-router-dom": "^6.10.0",
+    "react-scripts": "4.0.3",
+    "styled-components": "^5.3.9",
+    "three": "^0.151.3"
+  },
+  "devDependencies": {
+    "typescript": "3.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

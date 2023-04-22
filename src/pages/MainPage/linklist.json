@@ -1,0 +1,12 @@
+{
+  "links": [
+    {
+      "to": "/Brain2",
+      "label": "Brain Demo App"
+    },
+    {
+      "to": "/circle",
+      "label": "Circle Path Demo Page"
+    }
+  ]
+}
