@@ -5,7 +5,7 @@ import { OrbitControls, Sky, useTexture, } from '@react-three/drei'
 // import { css } from '@emotion/core'
 // import Layout from "@components/layoutwidellh"
 import MySceneThings from "./MySceneThings";
-import Floor from "./Floor";
+import Floor from "../../components/Floor";
 
 function Logo(props) {
   const myytexture = useTexture('/images/square_logo.png')
