@@ -45,7 +45,7 @@ function AnimateEyeToTarget({ position, target }) {
             controls.enabled = true;
         }
     });
-    console.log('camera position: ', camera.position.toArray())
+
     s.position.start({ from: camera.position.toArray(), to: position });
     s.target.start({
         from: controls ? controls.target.toArray() : [0, 0, 0],
