@@ -2,8 +2,7 @@ import * as THREE from 'three'
 import React, { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Sky, useTexture, } from '@react-three/drei'
-// import { css } from '@emotion/core'
-// import Layout from "@components/layoutwidellh"
+import LogoDiv from '../../components/LogoDiv';
 import MySceneThings from "./MySceneThings";
 import Floor from "../../components/Floor";
 
@@ -20,33 +19,36 @@ function Logo(props) {
 }
 
 const CirclePage = (props) => (
+  <>
+    <Canvas
+      shadows
+      camera={{ position: [-20, 10, 10], fov: 42 }}
+      onCreated={({ gl, camera, scene }) => {
+        scene.background = new THREE.Color(0xa2b9e7);
+        gl.shadowMap.enabled = true;
+        gl.shadowMap.type = THREE.PCFShadowMap;
+        gl.shadowMap.autoUpdate = true;
+        gl.toneMapping = THREE.ACESFilmicToneMapping;
+      }}>
 
-  <Canvas
-    shadows
-    camera={{ position: [-20, 10, 10], fov: 42 }}
-    onCreated={({ gl, camera, scene }) => {
-      scene.background = new THREE.Color(0xa2b9e7);
-      gl.shadowMap.enabled = true;
-      gl.shadowMap.type = THREE.PCFShadowMap;
-      gl.shadowMap.autoUpdate = true;
-      gl.toneMapping = THREE.ACESFilmicToneMapping;
-    }}>
+      <ambientLight intensity={.4} />
+      <Suspense fallback={null}>
+        <Logo position={[0, 0, 1.6]} />
+      </Suspense>
+      <Floor />
 
-    <ambientLight intensity={.4} />
-    <Suspense fallback={null}>
-      <Logo position={[0, 0, 1.6]} />
-    </Suspense>
-    <Floor />
+      <MySceneThings />
 
-    <MySceneThings />
+      {/* <Sky scale={100} sunPosition={[400, 500, -1000]} turbidity={0.1} /> */}
+      <OrbitControls
+        enableDamping
+        dampingFactor={0.2}
+        maxDistance={50}
+        autoRotate autoRotateSpeed={-.2} />
+    </Canvas>
 
-    {/* <Sky scale={100} sunPosition={[400, 500, -1000]} turbidity={0.1} /> */}
-    <OrbitControls
-      enableDamping
-      dampingFactor={0.2}
-      maxDistance={50}
-      autoRotate autoRotateSpeed={-.2} />
-  </Canvas>
+    <LogoDiv />
+  </>
 )
 
 export default CirclePage  

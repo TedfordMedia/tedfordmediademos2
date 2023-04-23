@@ -4,7 +4,7 @@
 // import { OrbitControls, PivotControls } from '@react-three/drei'
 // import { Geometry, Base, Subtraction, Addition } from '@react-three/csg'
 // import CsgHouse from "./CsgHouse";
-// import LogoDiv from '../../components/LogoDiv';
+import LogoDiv from '../../components/LogoDiv';
 import useSceneStore from '../../useSceneStore';
 // import PelvisHtml from "../../components/PelvisHtml";
 // import { Environment } from './Environment'
@@ -63,7 +63,7 @@ function Bunny() {
                         </Subtraction>
                     </group>
                 </PivotControls>
-            </Geometry>
+            </Geometry><meshStandardMaterial color="blue" />
         </mesh>
     )
 }
@@ -96,6 +96,7 @@ function CsgRabbitPage(props) {
                 <Environment preset="city" />
                 <OrbitControls makeDefault />
             </Canvas>
+            <LogoDiv />
         </>
     )
 };
@@ -106,5 +107,5 @@ function CsgRabbitPage(props) {
 //                 <Environment />
 //                 <OrbitControls makeDefault />
 //             </Canvas>
-//             <LogoDiv />
+//           
 export default CsgRabbitPage;

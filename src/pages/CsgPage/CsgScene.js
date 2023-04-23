@@ -17,21 +17,16 @@ function hellosay(e) {
 const FakeSphere = () => {
   return (
     <mesh castShadow receiveShadow>
-      <sphereBufferGeometry args={[0.3, 40, 40]} attach="geometry" />
-      <meshStandardMaterial attach="material" />
+      <Geometry useGroups>
+        <Base>
+          <sphereBufferGeometry args={[0.3, 40, 40]} attach="geometry" />
+          <meshStandardMaterial attach="material" color={'pink'} />
+        </Base>
+      </Geometry>
     </mesh>
   );
 }
 
-
-const Chimney = (props) => (
-  <Addition name="chimney" {...props}>
-    <Geometry>
-      <Base name="base" geometry={box} scale={[1, 2, 1]} />
-      <Subtraction name="hole" geometry={box} scale={[0.7, 2, 0.7]} position={[0, 0.5, 0]} />
-    </Geometry>
-  </Addition>
-)
 
 const CsgScene = (props) => {
   const ambientIntensity = useSceneStore((state) => state.ambientIntensity);
@@ -52,10 +47,14 @@ const CsgScene = (props) => {
           shadow-camera-left={-20}
           shadow-camera-right={20} />
       </group>
+
       <Pelvis clickFunction={hellosay} scale={.004} position={[0, -1.3, 3]} />
       <primitive position={[0, .001, 0]} object={new THREE.AxesHelper(1)} />
       <primitive object={new THREE.GridHelper(1, 20)} />
+      {/* <Geometry computeVertexNormals> */}
       <FakeSphere />
+      {/* <Door rotation={[0, Math.PI / 2, 0]} position={[-1.425, -0.45, 0]} scale={[11, 10.9, 11]} />
+      </Geometry> */}
     </>
   )
 }
