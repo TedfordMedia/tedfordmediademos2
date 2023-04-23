@@ -19,9 +19,14 @@ const FakeSphere = () => {
     <mesh castShadow receiveShadow>
       <Geometry useGroups>
         <Base>
-          <sphereBufferGeometry args={[0.3, 40, 40]} attach="geometry" />
+          <sphereGeometry args={[0.3, 40, 40]} attach="geometry" />
           <meshStandardMaterial attach="material" color={'pink'} />
         </Base>
+        <Subtraction position={[0, 0, 0]}>
+          {/* <sphereGeometry args={[0.4, 52, 52]} /> */}
+          {/* <meshStandardMaterial color="orange" /> */}
+          <boxGeometry args={[.2, 2, .6]} />
+        </Subtraction>
       </Geometry>
     </mesh>
   );
