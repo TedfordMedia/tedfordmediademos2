@@ -13,6 +13,10 @@
       "label": "CSG Testing"
     },
     {
+      "to": "/CsgHouse",
+      "label": "CSG House"
+    },
+    {
       "to": "/circle",
       "label": "Circle Path Demo Page"
     }

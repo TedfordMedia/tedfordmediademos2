@@ -33,7 +33,7 @@ const Chimney = (props) => (
   </Addition>
 )
 
-const CsgScene = (props) => {
+const CsgHouse = (props) => {
   const ambientIntensity = useSceneStore((state) => state.ambientIntensity);
   const directionalIntensity = useSceneStore((state) => state.directionalIntensity);
 
@@ -52,13 +52,12 @@ const CsgScene = (props) => {
           shadow-camera-left={-20}
           shadow-camera-right={20} />
       </group>
-      <Pelvis clickFunction={hellosay} scale={.004} position={[0, -1.3, 3]} />
       <primitive position={[0, .001, 0]} object={new THREE.AxesHelper(1)} />
-      <primitive object={new THREE.GridHelper(1, 20)} />
+      {/* <primitive object={new THREE.GridHelper(1, 20)} /> */}
       {/* <FakeSphere /> */}
-      <Chimney position={[-20, 0, 0]} />
+      {/* <Chimney position={[-20, 0, 0]} /> */}
     </>
   )
 }
 
-export default CsgScene
+export default CsgHouse
