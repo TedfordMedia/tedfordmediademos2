@@ -8,6 +8,7 @@ import LogoDiv from '../../components/LogoDiv';
 import useSceneStore from '../../useSceneStore';
 import PelvisHtml from "../../components/PelvisHtml";
 import { Environment } from './Environment'
+import TestShape from './TestShape'
 
 const box = new THREE.BoxGeometry()
 const cyl = new THREE.CylinderGeometry(1, 1, 2, 20)
@@ -17,10 +18,13 @@ const tri = new THREE.CylinderGeometry(1, 1, 2, 3)
 
 function House(props) {
     const csg = useRef()
+
     return (
         <mesh receiveShadow castShadow {...props}>
             <Geometry ref={csg} computeVertexNormals>
-                <Base name="base" geometry={box} scale={[3, 3, 3]} />
+                <Base name="base" geometry={box} scale={[3, 3, 3]} >
+                    <meshStandardMaterial color="blue" />
+                </Base>
                 <Subtraction name="cavity" geometry={box} scale={[2.7, 2.7, 2.7]} />
                 <Addition name="roof" geometry={tri} scale={[2.5, 1.5, 1.425]} rotation={[-Math.PI / 2, 0, 0]} position={[0, 2.2, 0]} />
                 <Chimney scale={0.5} position={[-0.75, 3, 0.8]} />
@@ -36,7 +40,7 @@ function House(props) {
                     <Door rotation={[0, Math.PI / 2, 0]} position={[-1.425, -0.45, 0]} scale={[1, 0.9, 1]} />
                 </PivotControls>
             </Geometry>
-            <meshStandardMaterial envMapIntensity={0.25} />
+            <meshStandardMaterial color={'lightgrey'} envMapIntensity={0.25} />
         </mesh>
     )
 }
@@ -60,14 +64,17 @@ const Window = (props) => (
     </Subtraction>
 )
 
-const Chimney = (props) => (
-    <Addition name="chimney" {...props}>
-        <Geometry>
-            <Base name="base" geometry={box} scale={[1, 2, 1]} />
-            <Subtraction name="hole" geometry={box} scale={[0.7, 2, 0.7]} position={[0, 0.5, 0]} />
-        </Geometry>
-    </Addition>
-)
+const Chimney = (props) => {
+
+    return (
+        <Addition name="chimney" {...props}>
+            <Geometry>
+                <Base name="base" geometry={box} scale={[1, 2, 1]} />
+                <Subtraction name="hole" geometry={box} scale={[0.7, 2, 0.7]} position={[0, 0.5, 0]} />
+            </Geometry>
+        </Addition>
+    );
+}
 
 
 function CsgPage(props) {
@@ -85,7 +92,8 @@ function CsgPage(props) {
             <Canvas shadows camera={{ position: [-15, 10, 15], fov: 25 }}>
                 <color attach="background" args={['skyblue']} />
                 <House />
-                {/* <House />     <CsgHouse /> */}
+                {/*   <CsgHouse /> */}
+                <TestShape position={[-3, -1, 0]} />
                 <Environment />
                 <OrbitControls makeDefault />
             </Canvas>

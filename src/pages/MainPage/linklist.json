@@ -17,6 +17,10 @@
       "label": "CSG House"
     },
     {
+      "to": "/CsgRabbit",
+      "label": "CSG Rabbit"
+    },
+    {
       "to": "/circle",
       "label": "Circle Path Demo Page"
     }

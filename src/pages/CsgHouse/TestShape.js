@@ -13,7 +13,7 @@ function TestShape(props) {
 
     return (
         <mesh receiveShadow castShadow {...props}>
-            <Geometry useGroups>
+            <Geometry >
                 <Base rotation={[0, Math.PI / 2, 0]} position={[-0.35, 0.4, 0.4]}>
                     <BoxBlendGeometry receiveShadow castShadow depth={0.75} />
                 </Base>
