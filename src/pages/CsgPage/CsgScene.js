@@ -55,8 +55,8 @@ const CsgScene = (props) => {
       <Pelvis clickFunction={hellosay} scale={.004} position={[0, -1.3, 3]} />
       <primitive position={[0, .001, 0]} object={new THREE.AxesHelper(1)} />
       <primitive object={new THREE.GridHelper(1, 20)} />
-      {/* <FakeSphere /> */}
-      <Chimney position={[-20, 0, 0]} />
+      <FakeSphere />
+      {/* <Chimney position={[-20, 0, 0]} /> */}
     </>
   )
 }

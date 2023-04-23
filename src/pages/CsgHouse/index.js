@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import React, { useRef, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, PivotControls } from '@react-three/drei'
+import { OrbitControls, PivotControls, Float } from '@react-three/drei'
 import { Geometry, Base, Subtraction, Addition } from '@react-three/csg'
 import CsgHouse from "./CsgHouse";
 import LogoDiv from '../../components/LogoDiv';
@@ -13,8 +13,6 @@ import TestShape from './TestShape'
 const box = new THREE.BoxGeometry()
 const cyl = new THREE.CylinderGeometry(1, 1, 2, 20)
 const tri = new THREE.CylinderGeometry(1, 1, 2, 3)
-
-
 
 function House(props) {
     const csg = useRef()
@@ -93,7 +91,9 @@ function CsgPage(props) {
                 <color attach="background" args={['skyblue']} />
                 <House />
                 {/*   <CsgHouse /> */}
-                <TestShape position={[-3, -1, 0]} />
+                <Float rotationIntensity={0} speed={3} rotation={[0, -Math.PI / 2, 0]}>
+                    <TestShape position={[-3, -1, 0]} />
+                </Float>
                 <Environment />
                 <OrbitControls makeDefault />
             </Canvas>

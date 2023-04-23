@@ -66,7 +66,6 @@ export function Brain(props) {
       }
       console.log('bonedecl', boneDecal)
     }
-    console.log('hello')
   }, [skinOpacty, boneDecal]);
 
   useEffect(() => {

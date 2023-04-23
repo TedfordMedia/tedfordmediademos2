@@ -94,9 +94,6 @@ export function Brain(props) {
     addObjectToClickPoint(e);
     useSceneStore.setState({ bottomPanelOpen: false })
   }
-  function sayHello(e) {
-    console.log('hello')
-  }
 
   function addObjectToClickPoint(e) {
     useSceneStore.setState({ selectedMarker: null });
@@ -134,9 +131,9 @@ export function Brain(props) {
           <mesh geometry={nodes.Object_23.geometry} material={materials.material_2} />
           <mesh geometry={nodes.Object_24.geometry} material={materials.material_2} />
           <group visible={brain}>
-            <mesh geometry={nodes.Object_26.geometry} material={brainMat} onPointerOver={(e) => sayHello(e)} onDoubleClick={(e) => twoClick(e)} />
-            <mesh geometry={nodes.Object_27.geometry} material={brainMat} onPointerOver={(e) => sayHello(e)} onDoubleClick={(e) => twoClick(e)} />
-            <mesh geometry={nodes.Object_28.geometry} material={brainMat} onPointerOver={(e) => sayHello(e)} onDoubleClick={(e) => twoClick(e)} />
+            <mesh geometry={nodes.Object_26.geometry} material={brainMat} onDoubleClick={(e) => twoClick(e)} />
+            <mesh geometry={nodes.Object_27.geometry} material={brainMat} onDoubleClick={(e) => twoClick(e)} />
+            <mesh geometry={nodes.Object_28.geometry} material={brainMat} onDoubleClick={(e) => twoClick(e)} />
           </group>
           <group visible={skin}>
             <mesh geometry={nodes.Object_30.geometry} material={materials.material_0} />

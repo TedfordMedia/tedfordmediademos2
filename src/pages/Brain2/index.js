@@ -35,7 +35,7 @@ export default function BrainPage2() {
                     }}>
 
                     <MyBrainScene2 />
-                    <OrbitControls ref={controls} enabled={false} />
+                    <OrbitControls ref={controls} />
                     <EyeAnimation />
                 </Canvas>
             </div>
