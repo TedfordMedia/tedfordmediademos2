@@ -13,13 +13,17 @@ export function Pelvis(props) {
     materials.mtl1.opacity = boneOpacity;
     materials.mtl156635.transparent = true;
     materials.mtl156635.opacity = boneOpacity;
+    materials.mtl228823.transparent = true;
+    materials.mtl228823.opacity = boneOpacity;
 
     if (boneOpacity === 0) {
       materials.mtl1.visible = false;
       materials.mtl156635.visible = false;
+      materials.mtl228823.visible = false;
     } else {
       materials.mtl1.visible = true;
       materials.mtl156635.visible = true;
+      materials.mtl228823.visible = true;
     }
   }, [boneOpacity]);
 
