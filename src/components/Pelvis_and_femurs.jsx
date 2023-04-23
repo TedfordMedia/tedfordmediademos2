@@ -1,19 +1,41 @@
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 import { useGLTF } from '@react-three/drei'
+import useSceneStore from '../useSceneStore';
+import { PelvisMarker } from './PelvisMarker';
 
 export function Pelvis(props) {
+  const [shapesOnCanvas, setShapesOnCanvas] = useState([]);
   const { nodes, materials } = useGLTF('/pelvis_and_femurs.glb')
+
+  function twoClick(e) {
+    e.stopPropagation();
+    addObjectToClickPoint(e);
+    useSceneStore.setState({ bottomPanelOpen: false })
+  }
+  function addObjectToClickPoint(e) {
+    console.log('addObjectToClickPoint 1')
+    e.stopPropagation();
+    // useSceneStore.setState({ selectedMarker: null });
+    const newShapes = [...shapesOnCanvas, <PelvisMarker shapesOnCanvas={shapesOnCanvas} thisNum={shapesOnCanvas.length} scale={.03} key={e.point.x} position={[e.point.x, e.point.y, e.point.z]} />];
+    setShapesOnCanvas(newShapes);
+    console.log('addObjectToClickPoint 2')
+  }
+
   return (
-    <group {...props} dispose={null}>
-      <group position={[0, 920.38, -608.47]} rotation={[-Math.PI, 0, 0]}>
-        <mesh geometry={nodes.Object_2.geometry} material={materials.mtl1} />
-        <mesh geometry={nodes.Object_3.geometry} material={materials.mtl1} />
-        <mesh geometry={nodes.Object_4.geometry} material={materials.mtl1} />
-        <mesh geometry={nodes.Object_5.geometry} material={materials.mtl156635} />
-        <mesh geometry={nodes.Object_6.geometry} material={materials.mtl156635} />
-        <mesh geometry={nodes.Object_7.geometry} material={materials.mtl228823} />
+    <>
+      <group {...props} dispose={null}>
+        <group position={[0, 920.38, -608.47]} rotation={[-Math.PI, 0, 0]}>
+          <mesh geometry={nodes.Object_2.geometry} material={materials.mtl1} onDoubleClick={(e) => twoClick(e)} />
+          <mesh geometry={nodes.Object_3.geometry} material={materials.mtl1} onDoubleClick={(e) => twoClick(e)} />
+          <mesh geometry={nodes.Object_4.geometry} material={materials.mtl1} onDoubleClick={(e) => twoClick(e)} />
+          <mesh geometry={nodes.Object_5.geometry} material={materials.mtl156635} onDoubleClick={(e) => twoClick(e)} />
+          <mesh geometry={nodes.Object_6.geometry} material={materials.mtl156635} onDoubleClick={(e) => twoClick(e)} />
+          <mesh geometry={nodes.Object_7.geometry} material={materials.mtl228823} onDoubleClick={(e) => twoClick(e)} />
+        </group>
+
       </group>
-    </group>
+      {[...shapesOnCanvas]}
+    </>
   )
 }
 

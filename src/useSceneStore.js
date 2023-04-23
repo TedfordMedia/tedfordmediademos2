@@ -32,7 +32,7 @@ let useSceneStore = create(set => ({
     position: [20, 0, 35],
     target: [0, 0, 0]
   },
-  brainMarkers: [],
+  modelMarkers: [],
   canvasClicked: () => set((state) => ({ lightingOpen: false }))
 }))
 

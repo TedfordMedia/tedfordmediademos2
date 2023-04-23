@@ -8,7 +8,7 @@ import '../styles.css';
 const ObjectDetsInput = () => {
 
     const bottomPanelOpen = useSceneStore((state) => state.bottomPanelOpen);
-    const brainMarkers = useSceneStore((state) => state.brainMarkers);
+    const modelMarkers = useSceneStore((state) => state.modelMarkers);
     const selectedMarker = useSceneStore((state) => state.selectedMarker);
 
     const colors = ['blue', 'red', 'green', 'white', 'yellow', 'cyan', 'magenta', 'black'];
@@ -18,7 +18,7 @@ const ObjectDetsInput = () => {
         useSceneStore.setState({ bottomPanelOpen: false })
     }
     function colorClick(e) {
-        brainMarkers[selectedMarker].current.material.color.set(e.target.style.backgroundColor);
+        modelMarkers[selectedMarker].current.material.color.set(e.target.style.backgroundColor);
     }
 
     return (
