@@ -15,6 +15,8 @@ let useSceneStore = create(set => ({
   lightingOpen: false,
   opacityOpen: true,
   bottomPanelOpen: false,
+  brainSlider: true,
+  skinSlider: true,
   botPosX: 0,
   botPosY: 0,
   botPosZ: 0,

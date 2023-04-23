@@ -1,22 +1,23 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import useSceneStore from '../useSceneStore';
 import Slider from '@mui/material/Slider';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import '../styles.css';
 
-const MySliders = () => {
+const MySliders = (props) => {
     const skinOpacty = useSceneStore((state) => state.skinOpacty);
     const boneOpacity = useSceneStore((state) => state.boneOpacity);
     const brainOpacity = useSceneStore((state) => state.brainOpacity);
     const opacityOpen = useSceneStore((state) => state.opacityOpen);
+
     return (
         <>
             {opacityOpen && (
                 <fieldset className='fieldseta'>
                     <div className="checkboxes">
-                        <Box >
+                        <Box style={{ display: props.hidebrain ? 'none' : 'block' }}>
                             <Typography sx={{ marginBottom: '0px' }} gutterBottom>Brain</Typography>
                             <Slider
                                 size="small"
@@ -30,7 +31,7 @@ const MySliders = () => {
                                 onChange={(e, value) => useSceneStore.setState({ brainOpacity: value })}
                             />
                         </Box>
-                        <Box >
+                        <Box style={{ display: props.hideskin ? 'none' : 'block' }}>
                             <Typography sx={{ marginBottom: '0px' }} gutterBottom>Skin</Typography>
                             <Slider
                                 size="small"

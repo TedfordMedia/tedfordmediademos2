@@ -19,10 +19,10 @@ const SurroundDiv = styled.div`
     flex-direction: column;
 `;
 
-const OpacityHtml = () => {
+const OpacityHtml = (props) => {
     return (
         <SurroundDiv>
-            <MySliders />
+            <MySliders {...props} />
         </SurroundDiv>
     );
 };

@@ -6,7 +6,11 @@
     },
     {
       "to": "/Measure",
-      "label": "Measurements Testing"
+      "label": "Measurements Testing Pelvis"
+    },
+    {
+      "to": "/MyCsg",
+      "label": "CSG Testing"
     },
     {
       "to": "/circle",
