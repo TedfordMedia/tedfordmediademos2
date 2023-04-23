@@ -56,7 +56,6 @@ const CsgScene = (props) => {
       <primitive position={[0, .001, 0]} object={new THREE.AxesHelper(1)} />
       <primitive object={new THREE.GridHelper(1, 20)} />
       <FakeSphere />
-      {/* <Chimney position={[-20, 0, 0]} /> */}
     </>
   )
 }
