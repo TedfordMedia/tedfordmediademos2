@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { useGLTF } from '@react-three/drei'
 import { useRef } from 'react'
-import { Geometry, Base, Addition, Subtraction } from '@react-three/csg'
+import { Geometry, Base, Addition, Subtraction, Intersection, Difference } from '@react-three/csg'
 import useSceneStore from '../../useSceneStore';
 
 const boxGeometry = new THREE.BoxGeometry()
