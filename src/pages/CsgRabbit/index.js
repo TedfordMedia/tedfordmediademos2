@@ -17,29 +17,37 @@ function CrossGeometry() {
 }
 function Bunny() {
     const csg = useRef()
-    const { nodes } = useGLTF('/bunny-transformed.glb')
+    const { nodes, materials } = useGLTF('/human_brain.glb')
     return (
         <mesh receiveShadow castShadow>
-
+            {/** This will yield a regular THREE.BufferGeometry that needs to be paired with a mesh.
+           If "useGroups" is true each op can have its own material. */}
             <Geometry ref={csg} useGroups>
-                <Base scale={1.5} position={[0, -1.04, 0]} geometry={nodes.bunny.geometry}>
-                    <meshStandardMaterial color="blue" />
+                {/** All operations behave like THREE.Mesh, they can be transformed, have geometry, and a material.
+             The chain begins with a base geometry, where all operations are carried out on.  */}
+                <Base scale={0.03} position={[0, -1.04, 0]} geometry={nodes.Object_5.geometry} material={materials.material_0}>
+                    {/* <MeshTransmissionMaterial samples={16} resolution={256} thickness={1} roughness={0.5} anisotropy={1} /> */}
                 </Base>
-                <Subtraction position={[-1, 1, 1]}>
-                    <sphereGeometry args={[0.4, 32, 32]} />
+                {/** Now come the boolean operations: Addition, Subtraction, Difference and Intersection. */}
+                <Subtraction position={[-1, 1.5, 1]}>
+                    <sphereGeometry args={[1.4, 32, 32]} />
                     <meshStandardMaterial color="orange" />
                 </Subtraction>
+                {/** CSG.Geometry is re-usable, form your own hierachies with previously created CSG geometries. */}
                 <Addition scale={0.5} rotation={[0.5, 0.2, Math.PI / 4]} position={[-0.75, 0.5, -0.25]}>
                     <CrossGeometry />
                     <meshStandardMaterial color="skyblue" />
                 </Addition>
+                {/** You can deeply nest operations, or control them with other components. */}
+                {/* <PivotControls lineWidth={3} scale={0.5} anchor={[0, 0, 0]} onDrag={() => csg.current.update()}> */}
                 <group scale={0.65} position={[0.5, 0.5, 0.9]}>
                     <Subtraction>
                         <dodecahedronGeometry />
-                        <meshStandardMaterial color="hotpink" />
+                        <meshStandardMaterial color="pink" />
                     </Subtraction>
                 </group>
-            </Geometry><meshStandardMaterial color="blue" />
+                {/* </PivotControls> */}
+            </Geometry>
         </mesh>
     )
 }
