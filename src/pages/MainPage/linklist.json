@@ -17,8 +17,8 @@
       "label": "CSG House"
     },
     {
-      "to": "/CsgRabbit",
-      "label": "CSG Rabbit"
+      "to": "/CsgHand",
+      "label": "CSG Hand"
     },
     {
       "to": "/circle",
