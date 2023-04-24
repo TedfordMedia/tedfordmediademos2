@@ -2,21 +2,21 @@ import React from 'react';
 import useSceneStore from '../useSceneStore';
 import '../styles.css';
 
-const BoneDecalDiv = () => {
-    const boneDecal = useSceneStore((state) => state.boneDecal);
+const AutoRotateDiv = () => {
+    const autoRotate = useSceneStore((state) => state.autoRotate);
 
     return (
-        <div id="bonedecaldiv">
+        <div id="showoperatorsdiv">
             <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.8' }}>
                 <input type="checkbox"
-                    checked={boneDecal}
+                    checked={autoRotate}
                     style={{ cursor: 'pointer' }}
-                    onChange={() => useSceneStore.setState({ boneDecal: !boneDecal })}
+                    onChange={() => useSceneStore.setState({ autoRotate: !autoRotate })}
                 />
-                <span>Bone Section Demo</span>
+                <span>AutoRotate</span>
             </label>
         </div>
     );
 };
 
-export default BoneDecalDiv;
+export default AutoRotateDiv;

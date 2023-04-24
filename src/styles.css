@@ -59,6 +59,11 @@ Typography P {
   margin-top: 10px;
 }
 
+#showoperatorsdiv {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 #transformsdiv {
   margin-top: 10px;
 }

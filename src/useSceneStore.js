@@ -1,6 +1,8 @@
 import create from 'zustand'
 
 let useSceneStore = create(set => ({
+  autoRotate: true,
+  showOperations: false,
   greenTargets: true,
   redTargets: true,
   skin: true,
@@ -30,6 +32,10 @@ let useSceneStore = create(set => ({
   selectedMarker: null,
   chosenMarkerColor: 'cyan',
   transformType: 'translate',
+  handObjectX: .25,
+  handObjectY: -0.8,
+  handObjectZ: -.1,
+
   camSubject: {
     position: [20, 0, 35],
     target: [0, 0, 0]
