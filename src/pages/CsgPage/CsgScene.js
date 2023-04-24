@@ -1,15 +1,8 @@
-import React, { useRef, useLayoutEffect, useMemo, Suspense } from "react";
+import react from "react";
 import * as THREE from "three";
-import { useGLTF, AccumulativeShadows, RandomizedLight, OrbitControls, PivotControls, MeshTransmissionMaterial, Center, Environment } from '@react-three/drei'
-import { Pelvis } from '../../components/Pelvis_and_femurs'
+import { Pelvis } from '../../components/Pelvis_and_femursB'
 import useSceneStore from '../../useSceneStore';
 import { Geometry, Base, Subtraction, Addition } from '@react-three/csg'
-
-
-const box = new THREE.BoxGeometry()
-const cyl = new THREE.CylinderGeometry(1, 1, 2, 20)
-const tri = new THREE.CylinderGeometry(1, 1, 2, 3)
-
 
 function hellosay(e) {
   console.log('hello', e)
@@ -23,8 +16,6 @@ const FakeSphere = () => {
           <meshStandardMaterial attach="material" color={'pink'} />
         </Base>
         <Subtraction position={[0, 0, 0]}>
-          {/* <sphereGeometry args={[0.4, 52, 52]} /> */}
-          {/* <meshStandardMaterial color="orange" /> */}
           <boxGeometry args={[.2, 2, .6]} />
         </Subtraction>
       </Geometry>
@@ -56,10 +47,7 @@ const CsgScene = (props) => {
       <Pelvis clickFunction={hellosay} scale={.004} position={[0, -1.3, 3]} />
       <primitive position={[0, .001, 0]} object={new THREE.AxesHelper(1)} />
       <primitive object={new THREE.GridHelper(1, 20)} />
-      {/* <Geometry computeVertexNormals> */}
       <FakeSphere />
-      {/* <Door rotation={[0, Math.PI / 2, 0]} position={[-1.425, -0.45, 0]} scale={[11, 10.9, 11]} />
-      </Geometry> */}
     </>
   )
 }

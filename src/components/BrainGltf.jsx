@@ -6,6 +6,8 @@ import { Color, Matrix4 } from 'three';
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { BrainMarker } from './BrainMarker';
+import { Geometry, Base, Subtraction, Addition } from '@react-three/csg'
+
 
 export function Brain(props) {
   const { nodes, materials } = useGLTF('/epilep.glb')
@@ -141,6 +143,19 @@ export function Brain(props) {
           </group>
         </group>
       </group>
+      {/* <group scale={30} position={[0, 0, 0]}>
+        <mesh castShadow receiveShadow>
+          <Geometry useGroups>
+            <Base>
+              <sphereGeometry args={[0.3, 40, 40]} attach="geometry" />
+              <meshStandardMaterial attach="material" color={'pink'} />
+            </Base>
+            <Subtraction position={[0, 0, 0]}>
+              <boxGeometry args={[.2, 2, .6]} />
+            </Subtraction>
+          </Geometry>
+        </mesh>
+      </group> */}
       {[...shapesOnCanvas]}
     </>
   )

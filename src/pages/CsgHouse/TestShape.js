@@ -1,15 +1,10 @@
 
-import React, { useRef, useLayoutEffect, useMemo, Suspense } from "react";
-import * as THREE from "three";
-import { useGLTF, AccumulativeShadows, RandomizedLight, OrbitControls, PivotControls, MeshTransmissionMaterial, Center, Environment } from '@react-three/drei'
-import { Pelvis } from '../../components/Pelvis_and_femurs'
-import useSceneStore from '../../useSceneStore';
+import React from "react";
 import { Geometry, Base, Subtraction, Addition } from '@react-three/csg'
 import { BoxBlendGeometry, HeartGeometry } from './common'
 4
 
 function TestShape(props) {
-    console.log('hellloo');
 
     return (
         <mesh receiveShadow castShadow {...props}>
