@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { useGLTF, Bvh } from '@react-three/drei'
+import { useGLTF, Bvh, Box, Html } from '@react-three/drei'
 import useSceneStore from '../useSceneStore';
 import * as THREE from "three";
 
@@ -13,6 +13,7 @@ function MiniMarker(props) {
 }
 export function Pelvis(props) {
   let markersCount = 0;
+  useSceneStore.setState({ markerCount: 0 });
   const { nodes, materials } = useGLTF('/pelvis_and_femurs.glb');
   const boneOpacity = useSceneStore((state) => state.boneOpacity);
   const MarkerA = useRef();
@@ -57,14 +58,14 @@ export function Pelvis(props) {
   }
   function Line({ start, end }) {
     const markerCount = useSceneStore((state) => state.markerCount);
+    const distance = useSceneStore((state) => state.distance);
     const ref = useRef()
 
     useEffect(() => {
       if (markerCount === 2) {
-        console.log('yes yes ')
         ref.current.geometry.setFromPoints([MarkerA.current.position, MarkerB.current.position])
+        useSceneStore.setState({ distance: MarkerA.current.position.distanceTo(MarkerB.current.position) });
       } else {
-        console.log('no set correct')
         ref.current.geometry.setFromPoints([[0, 0, 0], [0, 0, 0]].map((point) => new THREE.Vector3(...point)))
       }
 
@@ -75,13 +76,16 @@ export function Pelvis(props) {
           <bufferGeometry />
           <lineBasicMaterial color="hotpink" />
         </line>
+        {markerCount === 2 && (
+          <Html><br /><br /><br /><h2 style={{ color: 'white', position: 'absolute', fontSize: '10px' }}>{(distance.toFixed(4)) * 1}&nbsp;m</h2></Html>
+        )}
       </>
     )
   }
   return (
     <>
       <group {...props} dispose={null}>
-        <group position={[0, 920.38, -608.47]} rotation={[-Math.PI, 0, 0]}>
+        <group scale={.5} position={[0, 670.38, -670.47]} rotation={[-Math.PI, 0, 0]}>
           <mesh>
             <Bvh firstHitOnly>
               <mesh castShadow receiveShadow geometry={nodes.Object_7.geometry} material={materials.mtl228823} onClick={(e) => didClick(e)} />
@@ -95,6 +99,7 @@ export function Pelvis(props) {
           </mesh>
         </group>
       </group>
+      {/* <Box /> */}
       <group name='markers'>
         <mesh position={[0, 0, 0]} visible={false} ref={MarkerA}><MiniMarker color='blue' /></mesh>
         <mesh position={[0, 0, 0]} visible={false} ref={MarkerB}><MiniMarker color='red' /></mesh>
