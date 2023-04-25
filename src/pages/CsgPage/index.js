@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import React, { useRef, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-import CsgScene from "./CsgScene";
+import PelvisScene from "./PelvisScene";
 import LogoDiv from '../../components/LogoDiv';
 import useSceneStore from '../../useSceneStore';
 import PelvisHtml from "../../components/PelvisHtml";
@@ -27,7 +27,7 @@ function CsgPage(props) {
                     gl.toneMapping = THREE.ACESFilmicToneMapping;
                 }}>
 
-                <CsgScene />
+                <PelvisScene />
 
                 <OrbitControls
                     target={[0, 0, 0]}

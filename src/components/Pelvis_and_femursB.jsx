@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGLTF, Bvh } from '@react-three/drei'
 import useSceneStore from '../useSceneStore';
+import * as THREE from "three";
 
 function MiniMarker(props) {
   return (
@@ -52,8 +53,31 @@ export function Pelvis(props) {
       MarkerB.current.position.set(e.point.x, e.point.y, e.point.z);
       MarkerB.current.visible = true;
     }
+    useSceneStore.setState({ markerCount: markersCount });
   }
+  function Line({ start, end }) {
+    const markerCount = useSceneStore((state) => state.markerCount);
+    const ref = useRef()
 
+    useEffect(() => {
+      if (markerCount === 2) {
+        console.log('yes yes ')
+        ref.current.geometry.setFromPoints([MarkerA.current.position, MarkerB.current.position])
+      } else {
+        console.log('no set correct')
+        ref.current.geometry.setFromPoints([[0, 0, 0], [0, 0, 0]].map((point) => new THREE.Vector3(...point)))
+      }
+
+    }, [MarkerA, MarkerB, markerCount])
+    return (
+      <>
+        <line ref={ref}>
+          <bufferGeometry />
+          <lineBasicMaterial color="hotpink" />
+        </line>
+      </>
+    )
+  }
   return (
     <>
       <group {...props} dispose={null}>
@@ -72,8 +96,9 @@ export function Pelvis(props) {
         </group>
       </group>
       <group name='markers'>
-        <mesh position={[-1, 0, 0]} visible={false} ref={MarkerA}><MiniMarker color='blue' /></mesh>
-        <mesh position={[-1, 1, 0]} visible={false} ref={MarkerB}><MiniMarker color='red' /></mesh>
+        <mesh position={[0, 0, 0]} visible={false} ref={MarkerA}><MiniMarker color='blue' /></mesh>
+        <mesh position={[0, 0, 0]} visible={false} ref={MarkerB}><MiniMarker color='red' /></mesh>
+        <Line start={[0, 0, 0]} end={[10, 0, 0]} />
       </group >
     </>
   )

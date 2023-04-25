@@ -1,6 +1,7 @@
 import create from 'zustand'
 
 let useSceneStore = create(set => ({
+  markerCount: 0,
   autoRotate: true,
   showOperations: false,
   greenTargets: true,

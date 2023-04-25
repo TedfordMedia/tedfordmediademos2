@@ -4,7 +4,7 @@ import { Pelvis } from '../../components/Pelvis_and_femursB'
 import useSceneStore from '../../useSceneStore';
 import { Html } from '@react-three/drei';
 
-const CsgScene = (props) => {
+const PelvisScene = (props) => {
   const ambientIntensity = useSceneStore((state) => state.ambientIntensity);
   const directionalIntensity = useSceneStore((state) => state.directionalIntensity);
 
@@ -33,4 +33,4 @@ const CsgScene = (props) => {
   )
 }
 
-export default CsgScene
+export default PelvisScene
