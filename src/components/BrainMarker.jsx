@@ -43,13 +43,6 @@ export const BrainMarker = (props) => {
         e.stopPropagation();
         setShowTransforms(true)
         useSceneStore.setState({ bottomPanelOpen: true })
-
-        // useSceneStore.setState({
-        //     camSubject: {
-        //         position: [20, 0, 35],
-        //         target: marker.current.position
-        //     }
-        // })
     }
 
     return (

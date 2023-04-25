@@ -11,7 +11,6 @@ function MiniMarker(props) {
   );
 }
 export function Pelvis(props) {
-  const [shapesOnCanvas, setShapesOnCanvas] = useState([]);
   let markersCount = 0;
   const { nodes, materials } = useGLTF('/pelvis_and_femurs.glb');
   const boneOpacity = useSceneStore((state) => state.boneOpacity);
@@ -59,23 +58,23 @@ export function Pelvis(props) {
     <>
       <group {...props} dispose={null}>
         <group position={[0, 920.38, -608.47]} rotation={[-Math.PI, 0, 0]}>
-          <Bvh firstHitOnly>
-            <mesh castShadow receiveShadow geometry={nodes.Object_7.geometry} material={materials.mtl228823} onClick={(e) => didClick(e)} />
-            <mesh castShadow receiveShadow geometry={nodes.Object_2.geometry} material={materials.mtl1} onClick={(e) => didClick(e)} />
-            <mesh castShadow receiveShadow geometry={nodes.Object_3.geometry} material={materials.mtl1} onClick={(e) => didClick(e)} />
-            <mesh castShadow receiveShadow geometry={nodes.Object_4.geometry} material={materials.mtl1} onClick={(e) => didClick(e)} />
-            <mesh castShadow receiveShadow geometry={nodes.Object_5.geometry} material={materials.mtl156635} onClick={(e) => didClick(e)} />
-            <mesh castShadow receiveShadow geometry={nodes.Object_6.geometry} material={materials.mtl156635} onClick={(e) => didClick(e)} />
-            <mesh castShadow receiveShadow geometry={nodes.Object_7.geometry} material={materials.mtl228823} onClick={(e) => didClick(e)} />
-          </Bvh>
+          <mesh>
+            <Bvh firstHitOnly>
+              <mesh castShadow receiveShadow geometry={nodes.Object_7.geometry} material={materials.mtl228823} onClick={(e) => didClick(e)} />
+              <mesh castShadow receiveShadow geometry={nodes.Object_2.geometry} material={materials.mtl1} onClick={(e) => didClick(e)} />
+              <mesh castShadow receiveShadow geometry={nodes.Object_3.geometry} material={materials.mtl1} onClick={(e) => didClick(e)} />
+              <mesh castShadow receiveShadow geometry={nodes.Object_4.geometry} material={materials.mtl1} onClick={(e) => didClick(e)} />
+              <mesh castShadow receiveShadow geometry={nodes.Object_5.geometry} material={materials.mtl156635} onClick={(e) => didClick(e)} />
+              <mesh castShadow receiveShadow geometry={nodes.Object_6.geometry} material={materials.mtl156635} onClick={(e) => didClick(e)} />
+              <mesh castShadow receiveShadow geometry={nodes.Object_7.geometry} material={materials.mtl228823} onClick={(e) => didClick(e)} />
+            </Bvh>
+          </mesh>
         </group>
       </group>
       <group name='markers'>
         <mesh position={[-1, 0, 0]} visible={false} ref={MarkerA}><MiniMarker color='blue' /></mesh>
         <mesh position={[-1, 1, 0]} visible={false} ref={MarkerB}><MiniMarker color='red' /></mesh>
       </group >
-      {/* <BVHHelper ref={bvhRef} /> */}
-      {[...shapesOnCanvas]}
     </>
   )
 }

@@ -1,8 +1,8 @@
-import react from "react";
+import react, { Suspense } from "react";
 import * as THREE from "three";
 import { Pelvis } from '../../components/Pelvis_and_femursB'
 import useSceneStore from '../../useSceneStore';
-import { Geometry, Base, Subtraction, Addition } from '@react-three/csg'
+import { Html } from '@react-three/drei';
 
 const CsgScene = (props) => {
   const ambientIntensity = useSceneStore((state) => state.ambientIntensity);
@@ -24,7 +24,9 @@ const CsgScene = (props) => {
           shadow-camera-right={20} />
       </group>
 
-      <Pelvis scale={.004} position={[0, -1.3, 3]} />
+      <Suspense fallback={<Html><h1 style={{ color: 'white' }}>Loading...</h1></Html>}>
+        <Pelvis scale={.004} position={[0, -1.3, 3]} />
+      </Suspense>
       <primitive position={[0, .001, 0]} object={new THREE.AxesHelper(1)} />
       <primitive object={new THREE.GridHelper(1, 20)} />
     </>

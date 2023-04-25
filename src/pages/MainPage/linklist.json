@@ -5,12 +5,8 @@
       "label": "Brain Demo App"
     },
     {
-      "to": "/Measure",
-      "label": "Measurements Testing Pelvis"
-    },
-    {
       "to": "/MyCsg",
-      "label": "CSG Testing Pelvis"
+      "label": "Pelvis Measure Markers and BVH"
     },
     {
       "to": "/CsgHouse",
