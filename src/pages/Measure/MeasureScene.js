@@ -39,9 +39,7 @@ function Line() {
     </>
   )
 }
-function hellosay(e) {
-  console.log('hello', e)
-}
+
 const MeasureScene = (props) => {
 
   return (
@@ -52,7 +50,7 @@ const MeasureScene = (props) => {
       </group>
       <Line />
       <MyLine />
-      <Pelvis clickFunction={hellosay} scale={.004} position={[0, -1.3, 3]} />
+      <Pelvis scale={.004} position={[0, -1.3, 3]} />
       <primitive position={[0, .001, 0]} object={new THREE.AxesHelper(1)} />
       <primitive object={new THREE.GridHelper(1, 20)} />
       {/* <Box position={[0, 0, 0]} scale={.06} /> */}

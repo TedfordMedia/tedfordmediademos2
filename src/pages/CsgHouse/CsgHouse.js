@@ -1,19 +1,10 @@
-import React, { useRef, useLayoutEffect, useMemo, Suspense } from "react";
+import React from "react";
 import * as THREE from "three";
-import { useGLTF, AccumulativeShadows, RandomizedLight, OrbitControls, PivotControls, MeshTransmissionMaterial, Center, Environment } from '@react-three/drei'
-import { Pelvis } from '../../components/Pelvis_and_femurs'
 import useSceneStore from '../../useSceneStore';
 import { Geometry, Base, Subtraction, Addition } from '@react-three/csg'
 
-
 const box = new THREE.BoxGeometry()
-const cyl = new THREE.CylinderGeometry(1, 1, 2, 20)
-const tri = new THREE.CylinderGeometry(1, 1, 2, 3)
 
-
-function hellosay(e) {
-  console.log('hello', e)
-}
 const FakeSphere = () => {
   return (
     <mesh castShadow receiveShadow>
