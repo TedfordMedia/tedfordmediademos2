@@ -39,10 +39,8 @@ jobs:
         run: |
           npm install
           npm run build
-          serve -s build
 
-
-# Please do not touch the following action
+# Please do not touch the following action.
       - name: Store deployment content
         uses: ionos-deploy-now/artifact-action@v1
         with:
