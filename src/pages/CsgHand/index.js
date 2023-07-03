@@ -32,7 +32,7 @@ export default function CsgHandPage() {
                 <group position={[0.5, -.25, 0]} rotation={[0, 0, -0.2]}>
                     <ManHandMain />
                 </group>
-                <Environment preset="city" />
+                {/* <Environment preset="city" /> */}
                 <OrbitControls makeDefault autoRotate={autoRotate} />
             </Canvas>
             <HandHtml />
