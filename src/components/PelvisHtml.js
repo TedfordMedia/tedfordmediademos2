@@ -1,13 +1,13 @@
 import React from 'react';
 import LogoDiv from './LogoDiv';
-import LightingInput from './LightingInput';
+import Gridselect from './GridSelectHtml';
 import '../styles.css';
 
 const PelvisHtml = () => {
     return (
         <>
             <LogoDiv />
-            <LightingInput />
+            <Gridselect />
         </>
     );
 };

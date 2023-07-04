@@ -4,7 +4,7 @@
 }
 
 .theselect {
-  font-size: 10px;
+  font-size: 16px;
 }
 
 .pagelink {
@@ -64,6 +64,16 @@ Typography P {
   cursor: pointer;
 }
 
+.basicinput {
+  padding: 10px;
+  font-size: large;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 #transformsdiv {
   margin-top: 10px;
 }
@@ -77,8 +87,8 @@ Typography P {
 .closeicon {
   position: absolute;
   top: 0px;
-  right: -8px;
-  height: 15px;
+  right: -5px;
+  height: 20px;
   cursor: pointer;
 }
 
@@ -87,7 +97,7 @@ Typography P {
   position: absolute;
   top: 7px;
   left: 7px;
-  height: 30px;
+  height: 40px;
   z-index: 10;
   background-color: aliceblue;
   line-height: normal;

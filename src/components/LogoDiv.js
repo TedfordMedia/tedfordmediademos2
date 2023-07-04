@@ -5,7 +5,7 @@ import '../styles.css';
 const LogoDiv = () => {
     return (
         <div id="logodiv">
-            <img src="/images/wideLogo.5x.png" alt="Logo" className="logo" />
+            <img src="/images/SYK_BIG.D.png" alt="Logo" className="logo" />
         </div>
     );
 };

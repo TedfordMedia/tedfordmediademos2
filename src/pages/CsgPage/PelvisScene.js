@@ -1,6 +1,7 @@
 import react, { Suspense } from "react";
 import * as THREE from "three";
 import { Pelvis } from '../../components/Pelvis_and_femursB'
+import GridParts from '../../components/GridParts'
 import useSceneStore from '../../useSceneStore';
 import { Html } from '@react-three/drei';
 
@@ -27,8 +28,7 @@ const PelvisScene = (props) => {
       <Suspense fallback={<Html><h1 style={{ color: 'white' }}>Loading...</h1></Html>}>
         <Pelvis scale={.004} position={[0, -1.3, 3]} />
       </Suspense>
-      <primitive position={[0, .001, 0]} object={new THREE.AxesHelper(1)} />
-      <primitive object={new THREE.GridHelper(1, 20)} />
+      <GridParts />
     </>
   )
 }

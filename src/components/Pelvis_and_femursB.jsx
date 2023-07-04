@@ -77,7 +77,7 @@ export function Pelvis(props) {
           <lineBasicMaterial color="hotpink" />
         </line>
         {markerCount === 2 && (
-          <Html><br /><br /><br /><h2 style={{ color: 'white', position: 'absolute', fontSize: '10px' }}>{(distance.toFixed(4)) * 1}&nbsp;m</h2></Html>
+          <Html><br /><br /><br /><h2 style={{ color: 'white', position: 'absolute', fontSize: '30px', textShadow: '2px 2px 10px #ff0000' }}>{(distance.toFixed(4)) * 1}&nbsp;m</h2></Html>
         )}
       </>
     )

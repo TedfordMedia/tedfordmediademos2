@@ -1,4 +1,4 @@
-# TedfordMedia React Three.js demos for TedfordMedia.co.uk
+# React Three.js demos
 
 feel free to use!
 

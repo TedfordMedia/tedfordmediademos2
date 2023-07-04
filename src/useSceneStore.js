@@ -4,6 +4,7 @@ let useSceneStore = create(set => ({
   markerCount: 0,
   distance: 0,
   autoRotate: true,
+  gridDivShow: true,
   showOperations: false,
   greenTargets: true,
   redTargets: true,
